@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context">
+	<beans profile="beatles">
+		<bean id="compactDisc" class="chapter2.soundsystem.BlankDisc">
+			<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+			<constructor-arg value="The Beatles" />
+			<constructor-arg>
+				<list>
+					<value>Sgt. Pepper's Lonely Hearts Club Band</value>
+					<value>With a Little Help from My Friends</value>
+					<value>Lucy in the Sky with Diamonds</value>
+					<value>Getting Better</value>
+					<value>Fixing a Hole</value>
+				</list>
+			</constructor-arg>
+		</bean>
+	</beans>
+
+	<beans profile="linkinpark">
+		<bean id="compactDisc" class="chapter2.soundsystem.BlankDisc">
+			<constructor-arg value="Meteora"/>
+			<constructor-arg value="Linkin Park"/>
+			<constructor-arg>
+				<list>
+					<value>Faint</value>
+					<value>Somewhere I belong</value>
+				</list>
+			</constructor-arg>
+		</bean>
+	</beans>
+
+	<beans>
+		<bean id="cdPlayer" class="chapter2.soundsystem.CdPlayer">
+			<property name="compactDisc" ref="compactDisc" />
+		</bean>
+	</beans>
+
+</beans>
