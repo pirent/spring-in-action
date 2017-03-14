@@ -22,4 +22,9 @@ public class BlankDisc implements CompactDisc {
 		}
 	}
 
+	public void playTrack(int trackNumber) {
+		String trackName = tracks.get(trackNumber);
+		System.out.println("Playing track \"" + trackName + "\"");
+	}
+
 }
